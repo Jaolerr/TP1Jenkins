@@ -23,13 +23,13 @@ public class AvisRepositoryTest {
 	
 	@BeforeEach
 	public void setUp() {
-		a1=new Avis ("commentaireTestAvis");
+		a1 = new Avis ("commentaireTestAvis");
 		savedAvis = iar.save(a1);
 	}
 	// test createAvis
 	
 	@Test
-	public void saveHotel() {
+	public void saveAvis() {
 		assertThat(savedAvis).isNotNull();
 		assertThat(savedAvis.getIdAvis()).isNotNull();
 	}
