@@ -48,7 +48,7 @@ public class DestinationController {
 	@GetMapping("updateDestination/{id}")
 	public String updateDestination(@PathVariable("id") long id, Model m)
 	{
-		m.addAttribute("d", idr.getReferenceById(id));
+		m.addAttribute("destination", idr.getReferenceById(id));
 		return "updateDestination";
 	}
 	@PostMapping("updateDestination")
