@@ -11,7 +11,7 @@
 			<td th:text="${hotel.idHotel}"></td>
 			<td th:text="${hotel.nom}"></td>
 			<td th:text="${hotel.nbEtoile}"></td>
-			<button th:text="reserver"></button>
+			<a th:href="@{reserver(id=${hotel.idHotel})}"><button th:text="reserver"></button></a>
 		
 		
 		</tr>

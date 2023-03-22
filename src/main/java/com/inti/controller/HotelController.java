@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.inti.model.Hotel;
 import com.inti.repository.IHotelRepository;
@@ -35,6 +36,20 @@ public class HotelController {
 		
 		return "topHotels";
 		
+	}
+	
+	@GetMapping("reserver")
+	public String reserver(@RequestParam("id") Long id, Model m) {
+		m.addAttribute(ihr.findById(id));
+		
+	return "reserverHotel";
+		
+	}
+	
+	@PostMapping("reserver")
+	public String saveResa() {
+		
+		return "redirect:top";
 	}
 	
 //	@GetMapping("listeHotels")
