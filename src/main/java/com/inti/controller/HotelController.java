@@ -5,12 +5,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.inti.model.Hotel;
 import com.inti.repository.IHotelRepository;
 
 
-@Controller
+@Controller @RequestMapping("hotel")
 public class HotelController {
 	@Autowired
 	IHotelRepository ihr;
