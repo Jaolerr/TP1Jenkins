@@ -21,7 +21,9 @@ public class AvisController {
 	IAvisRepository iar;
 	
 	@GetMapping("createAvis")
+
 	public String createAvis() {
+
 		return "createAvis";
 	}
 	
