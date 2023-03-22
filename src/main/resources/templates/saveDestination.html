@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title>Destination</title>
@@ -20,7 +20,14 @@
   
 </div>
 <br>
+<label class="form-label" for="formControlLg">Hotel</label>
 
+
+ <div th:each="h:${listeH}">
+ <input type="checkbox" th:value="${h.idHotel}" th:text="'${h.nom}'+'${h.nbEtoile}'">
+ 
+  
+</div>
 
 
 

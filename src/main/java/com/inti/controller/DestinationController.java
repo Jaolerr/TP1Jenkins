@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.inti.model.Destination;
 import com.inti.repository.IDestinationRepository;
+import com.inti.repository.IHotelRepository;
 
 
 
@@ -20,8 +21,12 @@ public class DestinationController {
 	@Autowired
 	IDestinationRepository idr;
 	
+	@Autowired
+	IHotelRepository ihr;
+	
 	@GetMapping("saveDestination")
-	public String saveDestination() {
+	public String saveDestination(Model m) {
+		m.addAttribute("listeH", ihr.findAll());
 		return "saveDestination";
 	}
 	@PostMapping("saveDestination")
@@ -52,7 +57,7 @@ public class DestinationController {
 		return "updateDestination";
 	}
 	@PostMapping("updateDestination")
-	public String updateDestination( @ModelAttribute("destination")Destination d)
+	public String updateDestination( @ModelAttribute("destination") Destination d)
 	{
 		
 		idr.save(d);
