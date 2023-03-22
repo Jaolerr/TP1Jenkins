@@ -23,7 +23,10 @@ public class Reservation {
 	@ManyToOne
 	@JoinColumn(name="idH")
 	private Hotel hotel;
-	//private Voyageur voyageur;
+	
+	@ManyToOne
+	@JoinColumn(name="idV")
+	private Voyageur voyageur;
 	
 
 }
