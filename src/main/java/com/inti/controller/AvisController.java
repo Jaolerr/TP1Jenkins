@@ -22,7 +22,7 @@ public class AvisController {
 	
 	@GetMapping("createAvis")
 	public String createAvisForm() {
-		return "createAvisForm";
+		return "createAvis";
 	}
 	
 	@PostMapping("createAvis")
