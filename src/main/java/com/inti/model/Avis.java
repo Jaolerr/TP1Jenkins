@@ -18,8 +18,8 @@ public class Avis {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idAvis;
-	private int commentaire;
-	public Avis(int commentaire) {
+	private String commentaire;
+	public Avis(String commentaire) {
 		super();
 		this.commentaire = commentaire;
 	}

@@ -23,10 +23,11 @@ public class Hotel {
 	private String nom;
 	private int nbEtoile;
 
-	@ManyToOne
-	@JoinColumn(name="id")
+	@ManyToOne @JoinColumn(name="id")
 	private Destination destination;
+
 	@OneToMany(mappedBy = "hotel")
+
 	private List<Reservation> reservation;
 	
 	public Hotel(String nom, int nbEtoile) {
