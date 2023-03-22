@@ -22,10 +22,10 @@ public class Destination {
 	private long id;
 	private long longitude;
 	private long latitude;
-//	
-//	@Exclude
-//	@OneToMany @JoinColumn(name="id_hotel")
-//	private List<Hotel> listeHotel;
+	
+	@Exclude
+	@OneToMany @JoinColumn(name="idHotel")
+	private List<Hotel> listeHotel;
 	
 	public Destination(long longitude, long latitude) {
 		super();
