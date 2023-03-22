@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<table th:each="voyageur : ${listeVoyageur}">
+		<tr>
+			<td th:text="${voyageur.id}"></td>
+			<td th:text="${voyageur.nom}"></td>
+		
+		<a th:href="@{supprimer(id=${voyageur.id})}"><button th:text="supprimer"></button></a>
+		</tr>
+	</table>
+
+</body>
+</html>

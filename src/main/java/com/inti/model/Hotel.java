@@ -25,8 +25,9 @@ public class Hotel {
 
 	@ManyToOne @JoinColumn(name="id")
 	private Destination destination;
-	
-	@OneToMany @JoinColumn(name="idReserv")
+
+	@OneToMany(mappedBy = "hotel")
+
 	private List<Reservation> reservation;
 	
 	@OneToMany (mappedBy = "hotel")
