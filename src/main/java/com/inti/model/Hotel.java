@@ -23,9 +23,9 @@ public class Hotel {
 	private String nom;
 	private int nbEtoile;
 
-	@ManyToOne
-	@JoinColumn(name="id")
+	@ManyToOne @JoinColumn(name="id")
 	private Destination destination;
+	
 	@OneToMany @JoinColumn(name="idReserv")
 	private List<Reservation> reservation;
 	
