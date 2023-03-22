@@ -24,7 +24,7 @@ public class Destination {
 	private long latitude;
 	
 	@Exclude
-	@OneToMany @JoinColumn(name="idHotel")
+	@OneToMany(mappedBy = "destination")
 	private List<Hotel> listeHotel;
 	
 	public Destination(long longitude, long latitude) {
