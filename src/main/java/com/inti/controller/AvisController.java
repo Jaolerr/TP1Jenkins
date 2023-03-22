@@ -21,21 +21,22 @@ public class AvisController {
 	IAvisRepository iar;
 	
 	@GetMapping("createAvis")
-	public String createAvisForm() {
-		return "createAvisForm";
+	public String createAvis() {
+		return "createAvis";
 	}
 	
-	@PostMapping("createAvis")
-	public String createAvis(@ModelAttribute("avis") Avis a) {
+	@PostMapping("saveAvis")
+	public String saveAvis(@ModelAttribute("avis") Avis a) {
 		iar.save(a);
 		return "redirect:/createAvis";
 	}
 	
-	@GetMapping("listeAvis")
+	@GetMapping("ListeAvis")
 	public String listeAvis(Model m) {
-		List<Avis> listAvis = iar.findAll();
-		m.addAttribute("listeAvis", listAvis);
-		return "listAvis";
+		List<Avis> listeA = iar.findAll();
+		m.addAttribute("ListeA", listeA);
+		System.out.println(listeA);
+		return "ListeAvis";
 	}
 	
 	@GetMapping("deleteAvis/{idAvis}")
@@ -47,11 +48,11 @@ public class AvisController {
 	@GetMapping("updateAvis/{idAvis}")
 	public String updateAvisForm(@PathVariable int id, Model m) {
 		m.addAttribute("Avis", iar.getReferenceById(id));
-		return "updateOeuvreForm";
+		return "updateAvisForm";
 	}
 
 	@PostMapping("updateOeuvre")
-	public String updateOeuvre(@ModelAttribute("avis") Avis a) {
+	public String updateOeuvre(@ModelAttribute("av") Avis a) {
 		iar.save(a);
 		return "redirect:/listeAvis";
 	}
