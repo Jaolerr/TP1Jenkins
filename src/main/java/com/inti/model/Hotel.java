@@ -30,6 +30,8 @@ public class Hotel {
 
 	private List<Reservation> reservation;
 	
+	@OneToMany (mappedBy = "hotel")
+	private List<Avis> listeAvis;
 	public Hotel(String nom, int nbEtoile) {
 		super();
 		this.nom = nom;
