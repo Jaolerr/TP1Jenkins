@@ -12,6 +12,7 @@ import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString.Exclude;
 
 @Entity @Data
 @NoArgsConstructor @AllArgsConstructor
@@ -22,15 +23,21 @@ public class Hotel {
 	private long idHotel;
 	private String nom;
 	private int nbEtoile;
-
+	
+	@Exclude
 	@ManyToOne @JoinColumn(name="id_des")
 	private Destination destination;
 
 	@OneToMany(mappedBy = "hotel")
 	private List<Reservation> reservation;
 	
+	
+	@Exclude
 	@OneToMany (mappedBy = "hotel")
 	private List<Avis> listeAvis;
+	
+	
+	
 	public Hotel(String nom, int nbEtoile) {
 		super();
 		this.nom = nom;

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<table th:each="hotel : ${Hotels}">
+		<tr>
+			<td th:text="${hotel.idHotel}"></td>
+			<td th:text="${hotel.nom}"></td>
+			<td th:text="${hotel.nbEtoile}"></td>
+			<a th:href="@{reserver(id=${hotel.idHotel})}"><button th:text="reserver"></button></a>
+		
+		
+		</tr>
+	</table>
+
+</body>
+</html>
